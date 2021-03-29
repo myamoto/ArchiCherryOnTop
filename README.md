@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/github/license/myamoto/ArchiCherryOnTop.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/myamoto/ArchiCherryOnTop)
 
-Secured REST API to transform well-formed [Archi](https://www.archimatetool.com/download) documents into [MxGraph](https://jgraph.github.io/mxgraph/) schemas.\
+Secured REST API to retrieve [MxGraph](https://jgraph.github.io/mxgraph/) schemas [Archi](https://www.archimatetool.com/download) files stored in Gitlab.\
 At the time or writing (23/03/2021) it is compatible with Archi 4.8.1 (January 18 2021) and mxGraph 4.2.2 (October 28 2020).\
 \
 
@@ -12,6 +12,8 @@ At the time or writing (23/03/2021) it is compatible with Archi 4.8.1 (January 1
 
 
 ## Install
+
+archicherryontop uses Spring-boot so it gets packaged in a single jar including embedded tomcat server. It can work with a spring-cloud-config server to hold its properties or a local configuration file.\
 
 ### create from source
 
@@ -40,7 +42,6 @@ mvn clean package
 your artifact is there : /data/toolup/projects/ArchiCherryOnTop/target/archicherryontop-1.0.0.jar
 ### deploy on linux
 
-archicherryontop uses Spring-boot so it gets packaged in a single jar including embedded tomcat server. It can work with a spring-cloud-config server to hold its properties or a local configuration file.\
 This is how to make it work with everything included in a single directory on Linux including a local configuration file.\
 
 1) create directory /opt/services/archicherryontop
