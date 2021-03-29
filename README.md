@@ -3,7 +3,8 @@
 [![license](https://img.shields.io/github/license/myamoto/ArchiCherryOnTop.svg)](LICENSE)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/myamoto/ArchiCherryOnTop)
 
-Secured REST API to retrieve [MxGraph](https://jgraph.github.io/mxgraph/) schemas [Archi](https://www.archimatetool.com/download) files stored in Gitlab.\
+Secured REST API to retrieve [MxGraph schemas](https://jgraph.github.io/mxgraph/) from [Archi files](https://www.archimatetool.com/download) stored in Gitlab.\
+GitOPS applied to Archimate : edit your schema, push it into SCM : it's available online for everyone.
 At the time or writing (23/03/2021) it is compatible with Archi 4.8.1 (January 18 2021) and mxGraph 4.2.2 (October 28 2020).\
 \
 
