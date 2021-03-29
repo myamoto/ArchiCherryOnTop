@@ -2,7 +2,6 @@ package org.toolup.archi.web.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.toolup.archi.ArchiConf;
 import org.toolup.secu.oauth.OAuthBearerFilter;
 
 
@@ -20,7 +20,7 @@ import org.toolup.secu.oauth.OAuthBearerFilter;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	Environment  env;
+	ArchiConf  conf;
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
@@ -37,24 +37,30 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		
+		http =
 		http
 		.csrf()
 		.disable()
 		.headers()
 		.frameOptions()
-		.disable()
+		.disable()		
 		.and()
 			.sessionManagement()
 			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and()
-			.authorizeRequests()
-			.antMatchers("/api/**").authenticated()
-			.antMatchers("/configuration/ui").permitAll()
-		.and()
-			.addFilterBefore(new OAuthBearerFilter(), UsernamePasswordAuthenticationFilter.class)
-		;
+		.and();
+		
+		if(conf.isBearerFilterEnabled()) {
+			http
+				.authorizeRequests()
+				.antMatchers("/api/**").authenticated()
+				.antMatchers("/configuration/ui").permitAll()
+			.and()
+				.addFilterBefore(new OAuthBearerFilter(), UsernamePasswordAuthenticationFilter.class);
+		}
 	}
-
+	
+	
 }
 
 

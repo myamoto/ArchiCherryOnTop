@@ -5,8 +5,7 @@ archiServerName=localhost
 archiServerPort=9999
 oauthPublicKeyUrl=https://my.oauth.bearer.server/publicKeys/
 
-
-home=$(`pwd`)
+home=$(pwd)
 
 java \
 -Dlog4j.debug \
@@ -15,5 +14,4 @@ java \
 -Dserver.address=$archiServerName \
 -Dserver.port=$archiServerPort \
 -Dspring.config.location=file:$home/application.properties \
--Dorg.toolup.secu.oauth.jwt.oidc.oauthPublicKeyUrl=$oauthPublicKeyUrl \
 -jar  $home/archicherryontop.jar

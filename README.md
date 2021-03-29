@@ -4,9 +4,8 @@
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/myamoto/ArchiCherryOnTop)
 
 Secured REST API to retrieve [MxGraph schemas](https://jgraph.github.io/mxgraph/) from [Archi files](https://www.archimatetool.com/download) stored in Gitlab.\
-GitOPS applied to Archimate : edit your schema, push it into SCM : it's available online for everyone.
+GitOPS applied to Archimate : edit your schema, push it into SCM : it's available in the API.\
 At the time or writing (23/03/2021) it is compatible with Archi 4.8.1 (January 18 2021) and mxGraph 4.2.2 (October 28 2020).\
-\
 
 
 ## Sample
@@ -56,7 +55,7 @@ You should now have this :\
 4) Customize
 - edit [gitlab settings](./src/deploy/archicherryontop/application.properties)
 - edit [server and OAuth settings](./src/deploy/archicherryontop/launch.sh)
-- edit [log path](https://github.com/myamoto/ArchiCherryOnTop/blob/master/src/deploy/archicherryontop/Log4j_custom.properties#L7)
+- edit [log path](./src/deploy/archicherryontop/Log4j_custom.properties#L7)
 
 ## Usage
 
