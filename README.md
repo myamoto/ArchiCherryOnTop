@@ -39,23 +39,23 @@ cd ArchiCherryOnTop
 mvn clean package
 ```
 
-your artifact is there : /data/toolup/projects/ArchiCherryOnTop/target/archicherryontop-1.0.0.jar
+your artifact is ready : /data/toolup/projects/ArchiCherryOnTop/target/archicherryontop-1.0.0.jar
 ### deploy on linux
 
-This is how to make it work with everything included in a single directory on Linux including a local configuration file.\
+This is how to make it work with everything included in a single directory on Linux including a local configuration file.
 
 1) create directory /opt/services/archicherryontop
 2) copy archicherryontop-1.0.0.jar in /opt/services/archicherryontop and rename to archicherryontop.jar
-3) download [archicherryontop](./src/deploy/archicherryontop) and copy in /opt/services/archicherryontop
-You should now have this :\
-- /opt/services/archicherryontop/archicherryontop.jar
-- /opt/services/archicherryontop/launch.sh
-- /opt/services/archicherryontop/Log4j_custom.properties
-- /opt/services/archicherryontop/application.properties
+3) download [archicherryontop](./src/deploy/archicherryontop) and copy in /opt/services/archicherryontop\
+  You should now have this :
+  - /opt/services/archicherryontop/archicherryontop.jar
+  - /opt/services/archicherryontop/launch.sh
+  - /opt/services/archicherryontop/Log4j_custom.properties
+  - /opt/services/archicherryontop/application.properties
 4) Customize
-- edit [gitlab settings](./src/deploy/archicherryontop/application.properties)
-- edit [server and OAuth settings](./src/deploy/archicherryontop/launch.sh)
-- edit [log path](./src/deploy/archicherryontop/Log4j_custom.properties#L7)
+  - edit [gitlab settings](./src/deploy/archicherryontop/application.properties)
+  - edit [server and OAuth settings](./src/deploy/archicherryontop/launch.sh)
+  - edit [log path](./src/deploy/archicherryontop/Log4j_custom.properties#L7)
 
 ## Usage
 
