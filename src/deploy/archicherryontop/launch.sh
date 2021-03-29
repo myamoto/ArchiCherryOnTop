@@ -3,7 +3,6 @@
 
 archiServerName=localhost
 archiServerPort=9999
-oauthPublicKeyUrl=https://my.oauth.bearer.server/publicKeys/
 
 home=$(pwd)
 
