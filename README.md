@@ -17,7 +17,7 @@ archicherryontop uses Spring-boot so it gets packaged in a single jar including 
 ### create from source
 
 It will be deployed on maven central shortly.\
-In the meantime, locally clone and install dependencies then clone and package this project.\
+In the meantime, locally clone and install dependencies then clone and package this project.
 
 ```bash
 mkdirs /data/toolup/projects
