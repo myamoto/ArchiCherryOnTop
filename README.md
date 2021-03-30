@@ -5,15 +5,14 @@
 
 Secured REST API to retrieve [MxGraph schemas](https://jgraph.github.io/mxgraph/) from [Archi files](https://www.archimatetool.com/download) stored in Gitlab.\
 GitOPS applied to Archimate : edit your schema, push it into SCM : it's available in the API.\
-At the time or writing (23/03/2021) it is compatible with Archi 4.8.1 (January 18 2021) and mxGraph 4.2.2 (October 28 2020).\
-
+At the time or writing (23/03/2021) it is compatible with Archi 4.8.1 (January 18 2021) and mxGraph 4.2.2 (October 28 2020).
 
 ## Sample
 
 
 ## Install
 
-archicherryontop uses Spring-boot so it gets packaged in a single jar including embedded tomcat server. It can work with a spring-cloud-config server to hold its properties or a local configuration file.\
+archicherryontop uses Spring-boot so it gets packaged in a single jar including embedded tomcat server. It can work with a spring-cloud-config server to hold its properties or a local configuration file.
 
 ### create from source
 
