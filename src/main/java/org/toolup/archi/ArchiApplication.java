@@ -10,7 +10,6 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.toolup.archi.web.rest.gallery.ArchiGraphProxyService;
-import org.toolup.secu.oauth.jwt.oidc.JWTBuilderOIDC;
 
 @SpringBootApplication
 public class ArchiApplication implements ApplicationRunner{
@@ -37,22 +36,12 @@ public class ArchiApplication implements ApplicationRunner{
 				conf.getArchiProjectUrl(),
 				conf.getGitWorkingDir());
 
-		if(conf.isBearerFilterEnabled()) {
-			String pubKeyUrl = conf.getOAuthBearerPubKeyUrl();
-			System.setProperty(JWTBuilderOIDC.OAUTH_PUBLIC_KEY_URL_PARAM, pubKeyUrl);
-			logger.info("security by OAuth Bearer is enabled.");
-			logger.info("OOAuth Bearer token signature should match public keys at : {}", pubKeyUrl);
-		}else {
-			logger.info("security is disabled.");
-		}
+		conf.getOAuthBearerFilter();
+		
 		logger.info("Initialization terminated smoothly.");
 	}
 
 
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
+	public void run(ApplicationArguments args) throws Exception {}
 
 }
