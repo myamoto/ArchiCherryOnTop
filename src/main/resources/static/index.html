@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr-FR">
+	<head>
+	    <!-- Required meta tags -->
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>ArchiCherryOnTop</title>
+		
+		<link rel='stylesheet' id='bootstrap'  href='./css/bootstrap.css' type='text/css' media='all' />
+
+		<script type='text/javascript' src='./js/jquery/jquery.js?ver=1.12.4-wp'></script>
+		<script type='text/javascript' src='./js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+		<script type='text/javascript' src='./js/archi-galerie-pre.js'></script>
+		<script type='text/javascript' src='./js/mxgraph-4.2.2/javascript/mxClient.js?ver=5.2.7'></script>
+		<script type='text/javascript' src='./js/bootstrap.bundle.min.js?ver=5.2.7'></script>
+		<script type='text/javascript' src='./js/archi-galerie.js'></script>
+		<script type='text/javascript' src='./js/toolup-common.js'></script>
+	</head>
+	<body>
+	<main role="main" class="container pt-6">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+
+                    <div class="card ">
+                        <div class="card-header">
+                            <nav > <h5><span id="piecesTitleSuffix"></span></h5>
+                                <ul class="pagination justify-content-start">
+                                  <li id="envtLi" class="page-item ml-4 form-inline">
+                                      <div class="input-group input-group-sm ">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-sm">Group</span>
+                                         </div>
+                                         <select id="group"></select>
+                                      </div>
+
+                                  </li>
+                                   <li id="envtLi" class="page-item ml-4 form-inline">
+                                        <div class="input-group input-group-sm ">
+                                            <div class="input-group-prepend">
+                                               <span class="input-group-text" id="inputGroup-sizing-sm">Schema</span>
+                                            </div>
+                                            <select id="schema"></select>
+                                      </div>
+                                  </li>
+                                  <li class="page-item"><a class="input-group-sm page-link ml-4 form-inline" href="#" id="exportGraph">Export</a></li>
+                                </ul>
+                              </nav>
+                                <div ><p class='text-primary' id="messageDiv"></p></div>
+
+                        </div>
+                        <div class="card-body" >
+                            <div  id="errorDiv"></div>
+
+                            <div id="graphContainer" style="position:relative;overflow:auto;width:100%;height:100%;cursor:default;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div >
+                <div class="modal fade" id="wait-modal" aria-labelledby="waitModal" aria-hidden="true" data-backdrop="static">
+                    <div class="modal-dialog modal-dialog-centered modal-sm"  role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h4 class="text-center m-0 py-4 px-0"><i class="fas fa-spinner fa-pulse mr-2"></i> Loading ...</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+<a id="back-to-top" href="#" class="btn btn-secondary btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+	</main>
+<script type='text/javascript' src='./js/wp-embed.min.js?ver=5.2.7'></script>
+        <small class="text-muted">Open sources and their licenses <a href="/opensources">right there</a>.</small>
+</body>
+</html>

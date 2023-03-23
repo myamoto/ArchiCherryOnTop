@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.toolup.archi.ArchiConf;
-import org.toolup.secu.oauth.OAuthBearerFilter;
+import org.toolup.archi.ArchiConf.OAuthBearerFilterStrategy;
 
 
 @Configuration
@@ -50,13 +50,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and();
 		
-		if(conf.isBearerFilterEnabled()) {
+		if(conf.getBearerFilterStrategy() != OAuthBearerFilterStrategy.disabled) {
 			http
 				.authorizeRequests()
 				.antMatchers("/api/**").authenticated()
 				.antMatchers("/configuration/ui").permitAll()
 			.and()
-				.addFilterBefore(new OAuthBearerFilter(), UsernamePasswordAuthenticationFilter.class);
+				.antMatcher("/api/**").addFilterBefore(conf.getOAuthBearerFilter(), UsernamePasswordAuthenticationFilter.class);
 		}
 	}
 	
