@@ -29,6 +29,7 @@ public class ArchiApplication implements ApplicationRunner{
 	
 	@PostConstruct
 	public void afterConstruct() throws Exception {
+<<<<<<< HEAD
 		logger.info("initializing Archi..");
 		conf.checkConf();
 		s.config(conf.getGitBaseUrl(),
@@ -39,6 +40,25 @@ public class ArchiApplication implements ApplicationRunner{
 		conf.getOAuthBearerFilter();
 		
 		logger.info("Initialization terminated smoothly.");
+=======
+		try {
+			logger.info("initializing Archi..");
+			conf.checkConf();
+			logger.info("configuration looks OK. configuring ArchiGraphProxyService.");
+			s.config(conf.getGitBaseUrl(),
+					conf.getGitToken(),
+					conf.getArchiProjectUrl(),
+					conf.getGitWorkingDir());
+			
+			logger.info("configuring OAuthBearerFilter.");
+			conf.getOAuthBearerFilter();
+			
+			logger.info("Initialization terminated smoothly.");
+		}catch(Exception ex) {
+			logger.error("initializing failure {}", ex);
+			throw ex;
+		}
+>>>>>>> 8dd7364c810eace2210ac18a9d73d6d316bd774d
 	}
 
 
